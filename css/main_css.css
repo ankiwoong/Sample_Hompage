@@ -1,0 +1,351 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS 초기화 선수작업 */
+*{
+	margin:0 auto;
+	padding:0;
+}
+ul,li,ol{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+
+/* 데스크탑용 웹페이지 */
+/* 해상도 960px ~ 1024px 이상 */
+
+/* 글꼴 변경 */
+#title{
+	font-family:"Henny Penny", cursive;
+}
+
+/* 헤더 수정 */
+#main_header{
+	width:900px;
+	/* 윤곽확인 */
+	border:1px solid black;
+	position:relative;
+	height:110px;
+}
+#title, #main_gnb, #main_lnb{
+	position:absolute;
+}
+#title{
+	left:15px;
+	top:10px;
+	}
+#main_gnb{
+	right:5px;
+	top:5px;
+	}
+#main_lnb{
+	right:5px;
+	bottom:5px;
+	}
+
+/* main_gnb 처리 */
+#main_gnb>ul{
+	overflow:hidden;
+}
+#main_gnb>ul>li{
+	float:left;
+	border:1px solid black;
+}
+#main_gnb>ul>li>a{
+	display:block;
+	padding:5px;
+	}
+
+/* 선 겹치는 부분 처리 */
+#main_gnb>ul>li:first-child{
+	border-right:0;
+	border-radius:8px 0 0 8px;
+	}
+#main_gnb>ul>li:last-child{
+	border-left:0;
+	border-radius:0 8px 8px 0;
+	}
+#main_gnb>ul>li:nth-child(2){	
+	border-right:0;
+}
+#main_gnb>ul>li:nth-child(3){	
+	border-right:0;
+}
+
+/* 롤오버 효과 */
+#main_gnb>ul>li:hover{
+	background:black;
+}
+#main_gnb>ul>li:hover>a{
+	color:white;
+}
+
+/* main_lnb 처리 */
+#main_lnb>ul{
+	overflow:hidden;
+}
+#main_lnb>ul>li{
+	float:left;
+	border:1px solid black;
+}
+#main_lnb>ul>li>a{
+	display:block;
+	padding:8px;
+	}
+
+/* 선 겹치는 부분 처리 */
+#main_lnb>ul>li:first-child{
+	border-right:0;
+	border-radius:10px 0 0 10px;
+	}
+#main_lnb>ul>li:last-child{
+	border-left:0;
+	border-radius:0 10px 10px 0;
+	}
+#main_lnb>ul>li:nth-child(2){	
+	border-right:0;
+}
+#main_lnb>ul>li:nth-child(3){	
+	border-right:0;
+}
+
+/* 롤오버 효과 */
+#main_lnb>ul>li:hover{
+	background:black;
+}
+#main_lnb>ul>li:hover>a{
+	color:white;
+}
+
+/* header 그라데이션 효과 */
+#main_header{
+	background:linear-gradient(snow 0%, beige 50%, ivory 100%);
+}
+
+/* gnb 서브 메뉴 구현하기 */
+#main_gnb{
+	z-index:2;
+}
+#main_gnb>ul{
+	overflow:visible;
+	position:relative;
+}
+#main_gnb>ul>li{
+	/* position:relative; */
+}
+#main_gnb ol{
+	display:none;
+	position:absolute;
+	width:100%;
+	border:1px solid black;
+	background:white;
+}
+#main_gnb>ul>li:hover ol{
+	display:block;
+	left:0;
+	top:40px;
+	font-size:12px;
+	border-radius:5px;
+	box-shadow:3px 3px 1px black;
+}
+#main_gnb>ul>li>a{
+	padding:10px;
+}
+
+/* lnb 서브 메뉴 구현하기 */
+#main_lnb{
+	z-index:1;
+}
+#main_lnb>ul{
+	overflow:visible;
+	position:relative;
+}
+#main_lnb>ul>li{
+	/* position:relative; */
+}
+#main_lnb ol{
+	display:none;
+	position:absolute;
+	width:100%;
+	border:1px solid black;
+	background:white;
+}
+#main_lnb>ul>li:hover ol{
+	display:block;
+	left:0;
+	top:40px;
+	font-size:12px;
+	border-radius:5px;
+	box-shadow:3px 3px 1px black;
+}
+#main_lnb>ul>li>a{
+	padding:10px;
+}
+
+/* 말줄임표넣기 */
+ol{
+	/* 줄 안바꾸기 */
+	white-space:nowrap;
+	/* 생략기호넣기 */
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+
+/* section 위치 */
+div#content{
+	border:1px solid black;
+	width:900px;
+	overflow:hidden;
+}
+#main_section{
+	width:700px;
+	float:left;
+}
+#main_aside{
+	width:200px;
+	float:right;
+}
+
+/* footer 위치 */
+#main_footer{
+	width:900px;
+	border:1px solid black;
+	text-align:center;
+}
+
+/* main_section 테두리 작업 */
+#main_section{
+	border:1px solid black;
+	box-sizing:border-box;
+}
+.main_article{
+	padding:10px;
+	border:1px solid black;
+	margin:5px;
+	/* 텍스트 양쪽 정렬 */
+	text-align:justify;
+}
+
+/* 맨 앞 한글자 대문자 / 색 지정 */
+.main_article p:first-letter{
+	font-size:2em;
+	color:blue;
+	font-weight:bold;
+}
+
+/* 맨 뒤에 end */
+.main_article p:after{
+/* 	content:'-End-';
+	color:gray; */
+}
+
+/* 드래그 효과 주기 */
+.main_article p::selection{
+	background:red;
+	color:white;
+}
+
+/* Main Article(h1) 마우스 올릴시 동적인 효과 주기 */
+.main_article h1:hover{
+	background:orange;
+}
+
+/* 탭 메뉴 구현하기 체크 시 움직임 */
+#first~div.tab_item:first-of-type{
+	display:none;
+	}
+#second~div.tab_item:last-of-type{
+	display:none;
+	}
+#first:checked~div.tab_item:first-of-type{
+	display:block;
+	}
+#second:checked~div.tab_item:last-of-type{
+	display:block;
+	}
+	
+/* 라디오 버튼 숨기기 */
+#first, #second{
+	display:none;
+}
+
+/* 탭 메뉴 디자인하기 */
+section.buttons{
+	overflow:hidden;
+	}
+section.buttons label{
+	width:100px;
+	border:1px solid black;
+	box-sizing:border-box;
+	float:left;
+	text-align:center;
+	line-height:30px;
+}
+#first~section.buttons label:nth-child(1){
+}
+#second~section.buttons label:nth-child(2){
+}
+#first:checked~section.buttons label:nth-child(1){
+	background:black;
+	color:white;
+}
+#second:checked~section.buttons label:nth-child(2){
+	background:black;
+	color:white;
+}
+
+/* 탭 콘텐츠 디자인 하기 */
+li.item{
+	padding:10px;
+	}
+li.item a:after{
+	content:'';
+	display:block;
+	clear:both;
+	}
+li.item a{}
+li.item a div.thumbnail{
+	float:left;
+	}
+li.item a div.description{
+	float:left;
+	margin-left:10px;
+	/* 말줄임표만들기 */
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	width:120px;	
+	}
+li.item a div.description:hover{
+	white-space:normal;
+}
+
+.tumbnail img{
+	width:45px;
+	height:45px;
+}
+
+/* 문장 끝에 번호 매기기 */
+body{
+	counter-reset:abc;
+}
+article p{
+	counter-increment:abc;
+}
+article p:after{
+	content:counter(abc)".End of paragraph";
+	color:red;
+}
+article p:before{
+	content:counter(abc)".Begin paragraph ";
+	color:blue;
+	font-size:1.5em;
+}
+article p:first-line{
+	line-height:1;
+	font-size:16px;
+	color:black;
+}
